@@ -1,106 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Geff Rodriguez | BSCS Portfolio</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geff Rodriguez | BSCS Portfolio</title>
+  <meta name="description" content="Portfolio of Geff Rodriguez, BSCS student passionate about programming, web development, and new technologies." />
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap)" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta property="og:title" content="Geff Rodriguez | BSCS Portfolio" />
+  <meta property="og:description" content="Programming, web development, and projects." />
+  <meta property="og:type" content="website" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-    <ul>
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#hero" aria-label="Home">GR</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+      </ul>
+    </nav>
 
-<header class="hero">
-    <img src="profile.jpg" alt="Geff Rodriguez">
+    <section id="hero" class="hero">
+      <img class="avatar" src="profile.jpg" alt="Portrait of Geff Rodriguez" loading="lazy" />
+      <h1>Geff Rodriguez</h1>
+      <p class="subtitle">Bachelor of Science in Computer Science (BSCS)</p>
+      <p class="tagline">Passionate about <strong>programming</strong>, <strong>web development</strong>, and learning new technologies.</p>
+      <div class="cta">
+        <a href="#projects" class="btn primary">See Projects</a>
+        <a href="#about" class="btn">Learn More</a>
+      </div>
+    </section>
+  </header>
 
-    <h1>Geff Rodriguez</h1>
+  <main id="main">
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        Hello! I am <strong>Geff Rodriguez</strong>, a BSCS student. I enjoy learning programming,
+        creating websites, and improving my computer skills. I’m always exploring new technologies
+        and sharpening fundamentals. My goal is to become a successful software developer.
+      </p>
 
-    <h3>Bachelor of Science in Computer Science (BSCS)</h3>
+      <div class="stats">
+        <div><span id="yearsCoding">0</span><small>years coding</small></div>
+        <div><span id="projectsCount">0</span><small>projects</small></div>
+        <div><span id="skillsCount">0</span><small>skills</small></div>
+      </div>
+    </section>
 
-    <p>
-        Passionate about programming, web development,
-        and learning new technologies.
-    </p>
+    <section id="skills" class="section alt">
+      <h2>Skills</h2>
+      <ul class="chips" aria-label="Skill list">
+        <li class="chip">HTML</li>
+        <li class="chip">CSS</li>
+        <li class="chip">JavaScript</li>
+        <li class="chip">Git & GitHub</li>
+        <li class="chip">Responsive Design</li>
+        <li class="chip">Communication</li>
+        <li class="chip">Problem Solving</li>
+        <li class="chip">Teamwork</li>
+      </ul>
+    </section>
 
-    <a href="#about" class="btn">Learn More</a>
-</header>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <p class="muted">Loaded dynamically from projects.json</p>
 
-<section id="about">
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search projects by name or tech..." aria-label="Search projects" />
+        <select id="techFilter" aria-label="Filter by technology">
+          <option value="">All Tech</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JavaScript">JavaScript</option>
+        </select>
+      </div>
 
-<h2>About Me</h2>
+      <div id="projectGrid" class="grid" role="list"></div>
+      <div id="pagination" class="pagination" aria-label="Projects pagination"></div>
+    </section>
 
-<p>
-Hello! I am <strong>Geff Rodriguez</strong>, a Bachelor of Science in Computer Science (BSCS) student.
-I enjoy learning programming, creating websites, and improving my computer skills.
-I am always willing to learn new technologies and gain more experience.
-My goal is to become a successful software developer in the future.
-</p>
+    <section id="contact" class="section alt">
+      <h2>Contact Me</h2>
+      <form id="contactForm" class="card" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+          <small class="error" data-for="name"></small>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+          <small class="error" data-for="email"></small>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <small class="error" data-for="message"></small>
+        </div>
+        <button type="submit" class="btn primary">Send</button>
+        <p id="formStatus" role="status" class="muted" aria-live="polite"></p>
+      </form>
 
-</section>
+      <div class="contact-meta">
+        <p><strong>Email:</strong> <a href="mailto:grodriguez23109833@student.dmmmsu.edu.ph">grodriguez23109833@student.dmmmsu.edu.ph</a></p>
+        <p><strong>GitHub:</strong> <a href="[github.com](https://github.com/yourusername)" target="_blank" rel="noopener">github.com/yourusername</a></p>
+      </div>
+    </section>
+  </main>
 
-<section id="skills">
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Geff Rodriguez • Built with HTML, CSS, JS, and Firebase</small>
+  </footer>
 
-<h2>Basic Skills</h2>
+  <!-- Firebase SDKs (leave as-is; add your config in firebase-config.js) -->
+  <script defer src="[gstatic.com](https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js)"></script>
+  <script defer src="[gstatic.com](https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js)"></script>
 
-<div class="cards">
-
-<div class="card">
-<h3>Computer Literacy</h3>
-<p>Basic knowledge of computers and software.</p>
-</div>
-
-<div class="card">
-<h3>HTML & CSS</h3>
-<p>Creating simple and responsive web pages.</p>
-</div>
-
-<div class="card">
-<h3>Microsoft Office</h3>
-<p>Basic skills in Word, Excel, and PowerPoint.</p>
-</div>
-
-<div class="card">
-<h3>Communication</h3>
-<p>Able to communicate clearly and respectfully.</p>
-</div>
-
-<div class="card">
-<h3>Problem Solving</h3>
-<p>Can solve simple problems and learn quickly.</p>
-</div>
-
-<div class="card">
-<h3>Teamwork</h3>
-<p>Works well with classmates and team members.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<h2>Contact Me</h2>
-
-<p><strong>Email:</strong> grodriguez23109833@student.dmmmsu.edu.ph</p>
-
-<p><strong>GitHub:</strong> github.com/yourusername</p>
-
-</section>
-
-<footer>
-
-<p>© 2026 Geff Rodriguez | BSCS Student</p>
-
-</footer>
-
-<script src="script.js"></script>
-
+  <script src="firebase-config.example.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
+
+
+
